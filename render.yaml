@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: my-express-app
+    name: your-app-name
     runtime: node
     buildCommand: npm install
-    startCommand: node index.js
+    startCommand: npm start
