@@ -15,8 +15,7 @@ import { UserController, PostController, CommentController } from "./controllers
 import { handleValidationError, checkAuth } from "./utils/index.js";
 
 mongoose
-  .connect(
-    "mongodb+srv://dolinchuka20:hfNG3Zi7YRpGfLwa@cluster0.c4xnk.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0" 
+  .connect( process.env.MONGODB_URL
   )
   
   .then(() => console.log("BD ok"))
@@ -425,7 +424,7 @@ app.get("/api/search", async (req, res) => {
 });
 
 
-app.listen(4444, (err) => {
+app.listen(process.env.PORT, (err) => {
   if (err) {
     return console.log("err");
   }
