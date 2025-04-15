@@ -16,7 +16,7 @@ import { handleValidationError, checkAuth } from "./utils/index.js";
 
 mongoose
   .connect(
-    "mongodb+srv://dolinchuka20:hfNG3Zi7YRpGfLwa@cluster0.c4xnk.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0" 
+    process.env.MONGODB_URL
   )
   
   .then(() => console.log("BD ok"))
@@ -425,7 +425,7 @@ app.get("/api/search", async (req, res) => {
 });
 
 
-app.listen(4444, (err) => {
+app.listen(process.env.PORT||4444, (err) => {
   if (err) {
     return console.log("err");
   }
