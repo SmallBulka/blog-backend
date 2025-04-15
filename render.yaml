@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: my-express-app
+    runtime: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
